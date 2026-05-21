@@ -1,0 +1,5 @@
+.venv
+mlruns
+*.xml
+*.png
+*.tgz
