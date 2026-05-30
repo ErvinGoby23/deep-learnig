@@ -4,7 +4,7 @@ Projet Deep Learning - EFREI Paris - Mastère Data Engineering & IA 2025-2026
 
 ## Prérequis
 
-- Python **3.10.x** obligatoire
+- Python **3.11.x** obligatoire
 - 8GB RAM minimum recommandé
 
 ## Installation
