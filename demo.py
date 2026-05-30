@@ -111,7 +111,9 @@ uploaded_file = st.file_uploader("Charger une radiographie", type=["png", "jpg",
 report_text = st.text_area("Compte-rendu radiologique (optionnel)",
                             placeholder="Ex: The cardiac silhouette is normal. No pleural effusion detected...")
 
-if uploaded_file:
+analyser = st.button("Analyser")
+
+if uploaded_file and analyser:
     image = Image.open(uploaded_file)
     st.image(image, caption="Radio chargee", width=400)
 
