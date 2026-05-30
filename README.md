@@ -4,7 +4,7 @@ Projet Deep Learning - EFREI Paris - Mastère Data Engineering & IA 2025-2026
 
 ## Prérequis
 
-- Python **3.11.x** obligatoire
+- Python **3.10.11** obligatoire
 - 8GB RAM minimum recommandé
 
 ## Installation
@@ -38,30 +38,9 @@ python mlflow_tracking.py
 mlflow ui --backend-store-uri ./mlruns
 ```
 
-Ouvrir **http://127.0.0.1:5000/#/experiments/204095494949531350/runs/7d1364fd9ca54a24a7d08be25f4455bf/model-metrics**
-
-
-## Ordre d'exécution des notebooks
-
-1. `eda_chestmnist.ipynb` — Analyse exploratoire
-2. `preprocessing.ipynb` — Preprocessing et augmentation
-3. `cnn_scratch.ipynb` — CNN from scratch
-4. `cnn_transfer.ipynb` — ResNet18 Transfer Learning
-5. `vit.ipynb` — Vision Transformer
-6. `autoencoder.ipynb` — Détection d'anomalies
-7. `multimodal.ipynb` — Multimodalité image + texte
+Ouvrir **http://127.0.0.1:5000**, cliquer sur **Model training** puis **Experiments** et sélectionner **chest_xray_classification** pour voir les 7 runs.
 
 ## Configuration matérielle
 
 - CPU uniquement (pas de GPU requis)
 - Python 3.10.11
-- Temps d'entraînement : ~10-15 min par modèle (6 epochs, 10k images)
-
-## Choix techniques
-
-- **Loss** : FocalLoss (gamma=2, alpha=0.25)
-- **Seuil décision** : 0.1 (optimisé pour le recall en médical)
-- **Augmentation** : HorizontalFlip, Rotation(10°), ColorJitter
-- **Sampling** : Stratified 10 000 images
-- **Seed** : 42
-- **Early stopping** : patience=3
