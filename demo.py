@@ -69,10 +69,10 @@ transform = transforms.Compose([
 ])
 
 # ── Interface Streamlit ──────────────────────────────────
-st.title("🫁 Système d'aide au tri radiologique")
+st.title("Système d'aide au tri radiologique")
 st.markdown("Chargez une radiographie thoracique pour obtenir une analyse automatique.")
 
-uploaded_file = st.file_uploader("📤 Charger une radiographie", type=["png", "jpg", "jpeg"])
+uploaded_file = st.file_uploader("Charger une radiographie", type=["png", "jpg", "jpeg"])
 
 if uploaded_file:
     image = Image.open(uploaded_file)
@@ -82,7 +82,7 @@ if uploaded_file:
     img_tensor = transform(image).unsqueeze(0)
     
     # ── Prédictions supervisées ──────────────────────────
-    st.subheader("📊 Prédictions des pathologies")
+    st.subheader("Prédictions des pathologies")
     with torch.no_grad():
         outputs = torch.sigmoid(cnn(img_tensor))
     
@@ -91,7 +91,7 @@ if uploaded_file:
         st.progress(float(prob), text=f"{name} : {prob:.2%}")
     
     # ── Score d'anomalie ─────────────────────────────────
-    st.subheader("🔍 Score d'anomalie")
+    st.subheader("Score d'anomalie")
     with torch.no_grad():
         reconstructed = ae(img_tensor)
     
@@ -100,6 +100,6 @@ if uploaded_file:
     
     st.metric("Erreur de reconstruction", f"{error:.4f}")
     if error > threshold:
-        st.error(f"⚠️ Image atypique détectée ! (seuil = {threshold})")
+        st.error(f"Image atypique détectée ! (seuil = {threshold})")
     else:
-        st.success(f"✅ Image normale (seuil = {threshold})")
+        st.success(f"Image normale (seuil = {threshold})")

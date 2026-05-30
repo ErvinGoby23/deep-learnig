@@ -38,7 +38,8 @@ python mlflow_tracking.py
 mlflow ui --backend-store-uri ./mlruns
 ```
 
-Ouvrir **http://127.0.0.1:5000**
+Ouvrir **http://127.0.0.1:5000/#/experiments/204095494949531350/runs/7d1364fd9ca54a24a7d08be25f4455bf/model-metrics**
+
 
 ## Ordre d'exécution des notebooks
 
